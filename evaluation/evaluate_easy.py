@@ -98,15 +98,17 @@ def eval_easy_gen(model_id, client, times=5):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--data_path", type=str, default="./data/query_easy_EN.jsonl")
+    parser.add_argument("--data_path", type=str, default="./data/question.jsonl")
     parser.add_argument("--model_id", type=str, default="qwq-32b")
+    parser.add_argument("--eval_rounds", type=int, default=5)
 
-    parser.add_argument("--model_url", type=str, default="https://openai.wokaai.cn/v1/")
-    parser.add_argument("--api_key", type=str, default="sk-CjbxGrKmsxyseMGUJ4RqiHZK8Z1MhDtuQzHxQRg1YYndQ07D")
+    openai_url = os.getenv("OPENAI_BASE_URL", '')
+    api_key = os.getenv("OPENAI_API_KEY", '')
+    client = OpenAI(base_url=openai_url, api_key = api_key, http_client=httpx.Client(verify=False), timeout=3600)
 
-    args = parser.parse_args()
-    args.savedir = "./eval_score/gpt-4.1"
-    if not os.path.exists(args.savedir):
-        os.makedirs(args.savedir)
 
-    client = OpenAI(base_url=args.model_url, api_key = args.api_key, http_client=httpx.Client(verify=False), timeout=3600)
+    eval_result_path = f"eval_results/{args.model_id}"
+    if not os.path.exists(eval_result_path):
+        os.makedirs(eval_result_path)
+
+    eval_easy_gen(args.model_id, client, args.eval_rounds)

@@ -1,4 +1,4 @@
-export OPENAI_BASE_URL="https://openai.wokaai.cn/v1/"
-export OPENAI_API_KEY="sk-CjbxGrKmsxyseMGUJ4RqiHZK8Z1MhDtuQzHxQRg1YYndQ07D"
+export OPENAI_BASE_URL="" # Put your openai api url here
+export OPENAI_API_KEY="" # Put your openai api key here
 
-python run_eval.py --model_id Qwen2.5-72B-INT8 --eval_rounds 1
+python run_eval.py --model_id QwQ-32B --eval_rounds 5

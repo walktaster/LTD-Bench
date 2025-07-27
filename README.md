@@ -25,7 +25,8 @@ pip install -r requirements.txt
 ```
 
 ## Run
-Run model inference
+Set up the model configuration in "run.sh" file, including your model_id, API_BASE_URL and API_KEY. (We have set model_id to GPT-4o by default)
+Then you can start running model inference!
 ```bash
 sh run.sh
 ```

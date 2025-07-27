@@ -33,8 +33,9 @@ sh run.sh
 ```
 
 ## Evaluation
-Set up your GPT-4.1 configuration in "run_eval.sh" file, including your API_URL and API_KEY.
-Run GPT-4.1 automatic evaluation
+Set up your GPT-4.1 configuration in "run_eval.sh" file, including your OPENAI_BASE_URL and OPENAIL_KEY.
+
+Then you can run GPT-4.1 automatic evaluation.
 ```bash
 sh run_eval.sh
 ```

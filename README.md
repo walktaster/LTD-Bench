@@ -25,13 +25,15 @@ pip install -r requirements.txt
 ```
 
 ## Run
-Set up the model configuration in "run.sh" file, including your model_id, API_BASE_URL and API_KEY. (We have set model_id to GPT-4o by default)
+Set up the model configuration in "run.sh" file, including your model_id, API_BASE_URL and API_KEY.
+
 Then you can start running model inference!
 ```bash
 sh run.sh
 ```
 
 ## Evaluation
+Set up your GPT-4.1 configuration in "run_eval.sh" file, including your API_URL and API_KEY.
 Run GPT-4.1 automatic evaluation
 ```bash
 sh run_eval.sh
